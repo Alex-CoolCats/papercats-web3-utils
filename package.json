@@ -1,5 +1,8 @@
 {
-  "name": "papercats-web3-utils",
+  "name": "@Alex-CoolCats/papercats-web3-utils",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/papercats-web3-utils"
+  },
   "version": "0.0.1",
   "description": "A web3 util library allowing easy web3 connections for your react dapp.",
   "scripts": {
