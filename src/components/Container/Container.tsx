@@ -15,17 +15,23 @@ export function Container(props: any) {
   let dataAttributes = {} as any;
   if (typeof props.className === 'string') {
     classNames.push(props.className);
-  } else if (Array.isArray(props.classNames)) {
-    classNames = props.classNames;
+  } else if (Array.isArray(props.className)) {
+    classNames = props.className.filter((cn: string) => cn);
   }
 
   if (props.loading === true) {
-    classNames.push('cool-cats-loading');
+    classNames.push('pc__loading');
   }
 
   if (Array.isArray(props.states)) {
     props.states.filter((s: any) => {
       return typeof s === 'object';
+    }).filter((s: any) => {
+      if (Object.keys(s).includes('className')) {
+        return s.className.length > 0;
+      }
+
+      return true;
     }).forEach((s: any) => {
       const resolveCondition = (attr: string | Function, condition: boolean) => {
         if (typeof attr === 'function') {
@@ -39,11 +45,18 @@ export function Container(props: any) {
         return '';
       };
       if (s.className) {
-        if (typeof s.condition === 'boolean') {
-          classNames.push(resolveCondition(s.className, s.condition));
-        } else if (typeof s.condition === 'function') {
-          classNames.push(resolveCondition(s.className, s.condition()));
-        } else if (typeof s.condition === 'undefined') {
+        if (typeof s.condition === 'boolean'
+          || typeof s.condition === 'function'
+        ) {
+          const rc = resolveCondition(
+            s.className,
+            typeof s.condition === 'function' ? s.condition() : s.condition
+          );
+
+          if (rc) {
+            classNames.push(rc);
+          }
+        } else if (typeof s.condition === 'undefined' && s.className && s.className.length > 0) {
           classNames.push(s.className);
         }
       }
