@@ -3,16 +3,20 @@
     "target": "es5", 
     "esModuleInterop": true, 
     "forceConsistentCasingInFileNames": true,
-    "strict": true, 
+    "allowJs": true, 
+    "strict": false, 
     "skipLibCheck": true,
     "jsx": "react", 
     "module": "ESNext",  
-    "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
-    "outDir": "dist",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "emitDeclarationOnly": true
-  }
+  },
+  "exclude": [
+    "**/tests",
+    "**/*.test.tsx",
+    "**/stories",
+    "**/*.stories.tsx",
+    "**/Test.tsx",
+  ]
 }

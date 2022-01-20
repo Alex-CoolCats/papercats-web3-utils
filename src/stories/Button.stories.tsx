@@ -1,9 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from './Button';
+import { Button } from '../components/Button/Button';
 
 export default {
-  title: 'Components/Button',
+  title: 'Button',
   component: Button,
   argTypes: {
     disabled: {

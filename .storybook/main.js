@@ -12,5 +12,14 @@ module.exports = {
   "framework": "@storybook/react",
   "core": {
     "builder": "webpack5"
-  }
+  },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.fallback.stream = false;
+    config.resolve.fallback.os = false;
+    config.resolve.fallback.http = false;
+    config.resolve.fallback.https = false;
+
+    // Return the altered config
+    return config;
+  },
 }

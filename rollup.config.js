@@ -5,6 +5,7 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import json from "@rollup/plugin-json";
 
 const packageJson = require("./package.json");
 
@@ -13,12 +14,12 @@ export default [
     input: "src/index.tsx",
     output: [
       {
-        file: packageJson.main,
+        dir: packageJson.main,
         format: "cjs",
         sourcemap: true,
       },
       {
-        file: packageJson.module,
+        dir: packageJson.module,
         format: "esm",
         sourcemap: true,
       },
@@ -29,12 +30,13 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(),
-      terser()
+      terser(),
+      json()
     ],
   },
   {
     input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    output: [{ dir: "dist", format: "esm" }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],
   },
