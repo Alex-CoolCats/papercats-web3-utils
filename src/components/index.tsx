@@ -1,3 +1,9 @@
-export { default as Container } from "./Container/Container";
-export { default as Button } from "./Button/Button";
-export { default as MetaMaskConnect } from "./MetaMask/Connect";
+import { Container } from "./Container/Container";
+import { Button } from "./Button/Button";
+import { Connect } from "./MetaMask/Connect";
+
+export default {
+  Container: Container,
+  Button: Button,
+  MetaMaskConnect: Connect
+}

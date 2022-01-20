@@ -1,7 +1,17 @@
-export { default as useContract } from "./useContract";
-export { default as useEth } from "./useEth";
-export { default as useIsConnected } from "./useIsConnected";
-export { default as useAccount } from "./useAccount";
-export { default as MetaMaskHooks } from "./MetaMask";
-export { default as WalletConnectHooks } from "./WalletConnect";
-export { default as WalletLinkHooks } from "./WalletLink";
+import useContract from "./useContract";
+import useEth from "./useEth";
+import useIsConnected from "./useIsConnected";
+import useAccount from "./useAccount";
+import MetaMaskHooks from "./MetaMask";
+import WalletConnectHooks from "./WalletConnect";
+import WalletLinkHooks from "./WalletLink";
+
+export default {
+  useContract: useContract,
+  useEth: useEth,
+  useIsConnected: useIsConnected,
+  useAccount: useAccount,
+  MetaMaskHooks: MetaMaskHooks,
+  WalletConnectHooks: WalletConnectHooks,
+  WalletLinkHooks: WalletLinkHooks
+}
