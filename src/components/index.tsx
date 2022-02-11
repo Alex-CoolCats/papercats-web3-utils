@@ -1,9 +1,3 @@
-import Container from "./Container";
-import Button from "./Button";
-import List from "./List";
-
-export default {
-  Container: Container,
-  Button: Button,
-  List: List
-}
+export { default as Button } from "./Button";
+export { default as Container } from "./Container";
+export { default as List } from "./List";
