@@ -1,9 +1,9 @@
-import { Container } from "./Container/Container";
-import { Button } from "./Button/Button";
-import { Connect } from "./MetaMask/Connect";
+import Container from "./Container";
+import Button from "./Button";
+import List from "./List";
 
 export default {
   Container: Container,
   Button: Button,
-  MetaMaskConnect: Connect
+  List: List
 }

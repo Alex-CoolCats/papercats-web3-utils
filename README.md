@@ -1,3 +1,7 @@
 # Paper Cats Web3 Utils
 
-Work in progress
+## Getting started
+``` npm install && npm run storybook ```
+
+## Running tests
+``` npm test ```

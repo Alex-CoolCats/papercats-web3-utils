@@ -1,13 +1,13 @@
 import React from 'react';
+import { IGenericElementProps, IIndexable } from '../../utils/config';
 
-interface GenericElementProps {
-  children: React.ReactNode;
-  className: string;
-  elementType?: string;
-}
+export function Element({ children, className, elementType: ElementType = 'div', ...rest }: IGenericElementProps): JSX.Element {
+  let props = Object.assign({}, rest) as IIndexable;
+  if (className) {
+    props.className = className;
+  }
 
-export function Element({ children, className, elementType: ElementType = 'div', ...rest }: GenericElementProps): JSX.Element {
-  return React.createElement(ElementType, Object.assign({ className: className }, rest), children);
+  return React.createElement(ElementType, props, children);
 }
 
 export function Container(props: any) {
