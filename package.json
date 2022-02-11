@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/papercats-web3-utils"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A web3 util library allowing easy web3 connections for your react dapp.",
   "scripts": {
     "rollup": "rollup -c",
