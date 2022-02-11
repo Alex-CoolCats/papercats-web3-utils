@@ -1,5 +1,1 @@
-import * as Config from './config';
-
-export default {
-  Config: Config
-};
+export * from "./config";

@@ -1,5 +1,1 @@
-import useObserver from "./useObserver";
-
-export default {
-  useObserver: useObserver
-}
+export { default as useObserver } from "./useObserver";
