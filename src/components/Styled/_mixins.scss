@@ -1,0 +1,41 @@
+@mixin largemobilebreakpoint() {
+  @media screen and (min-width: 440px) {
+    @content;
+  }
+}
+
+@mixin tabletbreakpoint() {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin tabletbreakpointonly() {
+  @media screen and (min-width: 800px) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin desktopbreakpoint() {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin largedesktopbreakpoint() {
+  @media screen and (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin tabletandbelowbreakpoint() {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin belowdesktopbreakpoint() {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}

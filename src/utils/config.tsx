@@ -13,3 +13,15 @@ export interface IGenericElementProps {
 export interface IJustChildrenProps {
   children: TChildNode;
 };
+
+export interface IButtonProps {
+	children: React.ReactNode;
+	disabled?: boolean;
+	colour?: string;
+	className?: string;
+	size?: string;
+	onClick?: Function;
+	elementType?: string;
+	states?: any;
+  title?: string;
+};

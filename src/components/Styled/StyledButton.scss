@@ -1,0 +1,149 @@
+@use "sass:math";
+@import 'variables';
+@import 'mixins';
+@import 'utils';
+
+.#{$global-prefix}btn {
+  padding: math.div($global-padding, 2) $global-padding;
+  font-family: 'Poppins', sans-serif;
+	background-color: map-get($site-colors, button);
+  border-radius: $global-button-border-radius;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.1s;
+  position: relative;
+  user-select: none;
+  transform-origin: center center;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(1.00);
+  }
+
+  @each $color, $value in $site-colors {
+    &.#{$color} {
+      background-color: $value;
+    }
+  }
+
+  &.tiny,
+  &.small,
+  &.normal,
+  &.medium,
+  &.medium,
+  &.large,
+  &.xlarge,
+  &.massive {
+    min-width: auto;
+  }
+  &.tiny {
+    @extend .#{$global-prefix}btn--tiny;
+  }
+  &.small {
+    @extend .#{$global-prefix}btn--small;
+  }
+  &.normal {
+    @extend .#{$global-prefix}btn--normal;
+  }
+  &.medium {
+    @extend .#{$global-prefix}btn--medium;
+  }
+  &.large {
+    @extend .#{$global-prefix}btn--large;
+  }
+  &.xlarge {
+    @extend .#{$global-prefix}btn--xlarge;
+  }
+  &.massive {
+    @extend .#{$global-prefix}btn--massive;
+  }
+}
+
+.#{$global-prefix}btn[disabled],
+.#{$global-prefix}btn.disabled {
+	cursor: not-allowed !important;
+	background-color: map-get($site-colors, disabled);
+}
+
+.#{$global-prefix}btn--tiny {
+  font-size: 10px !important;
+  line-height: 18px !important;
+
+  @include desktopbreakpoint() {
+    font-size: 12px !important;
+    line-height: 20px !important;
+  }
+}
+
+.#{$global-prefix}btn--small {
+  font-size: 14px !important;
+  line-height: 18px !important;
+
+  @include desktopbreakpoint() {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+}
+
+.#{$global-prefix}btn--normal,
+.#{$global-prefix}btn--medium {
+  font-size: 16px !important;
+  line-height: 20px !important;
+
+  @include desktopbreakpoint() {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+}
+
+.#{$global-prefix}btn--large {
+  font-size: 20px !important;
+  line-height: 24px !important;
+
+  @include desktopbreakpoint() {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+}
+
+.#{$global-prefix}btn--xlarge {
+  font-size: 30px !important;
+  line-height: 40px !important;
+
+  @include desktopbreakpoint() {
+    font-size: 40px !important;
+    line-height: 42px !important;
+  }
+}
+
+.#{$global-prefix}btn--massive {
+  font-size: 40px !important;
+  line-height: 60px !important;
+  border-radius: 65px !important;
+
+  @include desktopbreakpoint() {
+    font-size: 50px !important;
+    line-height: 98px !important;
+  }
+}
+
+.#{$global-prefix}btns {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+
+  .#{$global-prefix}btn {
+    margin-right: 1rem;
+    min-width: auto;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

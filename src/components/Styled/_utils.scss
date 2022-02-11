@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+[class*=" pc-"],
+[class^=pc-] {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}

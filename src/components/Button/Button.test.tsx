@@ -15,13 +15,6 @@ afterEach(() => {
   container = null;
 });
 
-describe("Button", () => {
-  test("renders the Button component", () => {
-    render(<Button>Button</Button>);
-    expect(screen.getByText('Button').classList.contains('pc__btn')).toBe(true);
-  });
-});
-
 test('calls onClick prop when clicked', () => {
   const handleClick = jest.fn();
   render(<Button onClick={handleClick}>Click Me</Button>);

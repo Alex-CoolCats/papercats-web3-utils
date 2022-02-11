@@ -37,7 +37,7 @@ export function List({ children, className, elementType: ElementType = 'ul', ...
   };
 
   return (
-    <Container elementType={ ElementType } className={ className || ('pc__list pc__list--' + ElementType) } {...rest}>
+    <Container elementType={ ElementType } className={ className } {...rest}>
       { getContent() }
     </Container>
   );

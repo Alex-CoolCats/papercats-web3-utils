@@ -1,0 +1,15 @@
+$site-colors: (
+  disabled: #A5A5A5,
+  error: #b15f5f,
+  warning: #E18800,
+  success: #8EB272,
+  info: #a1c7fc,
+  button: #9CB5FE
+);
+
+$global-margin: 16px;
+$global-padding: $global-margin;
+$global-font: 'Roboto Mono', sans-serif;
+$global-border-radius: 5px;
+$global-button-border-radius: 32px;
+$global-prefix: 'pc-';

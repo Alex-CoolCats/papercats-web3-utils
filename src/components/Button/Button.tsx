@@ -1,29 +1,17 @@
 import React from 'react';
+import { IButtonProps } from '../..';
 import { Container } from '../Container/Container';
-import "./Button.scss";
 
-export type ButtonProps = {
-	children: React.ReactNode,
-	disabled?: boolean,
-	colour?: string,
-	className?: string,
-	size?: string,
-	onClick?: Function,
-	elementType?: string,
-	states?: any,
-  title?: string
-};
-
-export function Button({ children, disabled, colour, className, size, onClick, elementType, states, title }: ButtonProps) {
+export function Button({ children, disabled, colour, className, size, onClick, elementType, states, title }: IButtonProps) {
   return (
     <Container
       elementType={ elementType || 'button' }
-      className={ className || ['pc__btn'] }
+      className={ className || [] }
       onClick={ onClick }
       disabled={ disabled || false }
       title={ title }
       states={ [{
-      	className: 'pc__btn--disabled', condition: disabled || false
+      	className: 'disabled', condition: disabled || false
       }, {
       	className: size || '',
       	condition: typeof size === 'string' && size.length > 0
