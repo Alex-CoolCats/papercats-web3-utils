@@ -1,3 +1,6 @@
+import * as buffer from 'buffer';
+window.Buffer = buffer.Buffer;
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
